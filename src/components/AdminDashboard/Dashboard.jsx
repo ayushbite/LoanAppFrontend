@@ -47,7 +47,7 @@ export default function Component() {
                 }`}
                 onClick={() => setActiveComponent("member")}
               >
-                <FilePlusIcon className="h-4 w-4" />
+                <MemberRegistrationIcon className="h-4 w-4" />
                 Member Registration
               </button>
               <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
@@ -113,7 +113,7 @@ export default function Component() {
                   }`}
                   onClick={() => setActiveComponent("member")}
                 >
-                  <FilePlusIcon className="h-4 w-4" />
+                  <MemberRegistrationIcon className="h-4 w-4" />
                   Member Registration
                 </button>
                 <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
@@ -177,7 +177,7 @@ function CircleCheckIcon(props) {
   );
 }
 
-function FilePlusIcon(props) {
+function MemberRegistrationIcon(props) {
   return (
     <svg
       {...props}
@@ -195,9 +195,11 @@ function FilePlusIcon(props) {
       <path d="M14 2v4a2 2 0 0 0 2 2h4" />
       <path d="M9 15h6" />
       <path d="M12 18v-6" />
+      <circle cx="12" cy="12" r="3" />
     </svg>
   );
 }
+
 
 function FileTextIcon(props) {
   return (
