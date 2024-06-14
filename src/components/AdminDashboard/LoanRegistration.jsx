@@ -132,6 +132,7 @@ const LoanRegistration = () => {
                 <div className="grid grid-cols-2 gap-4">
                     <div className="space-y-2">
                         <Label htmlFor="center">Center</Label>
+                        <Label htmlFor="center">Center</Label>
                         <Select value={formData.centerNo} onValueChange={(value) => handleCenterChange(value)}>
                             <SelectTrigger>
                                 <SelectValue placeholder="Select center" />
