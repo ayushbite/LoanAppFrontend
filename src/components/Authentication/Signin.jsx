@@ -23,9 +23,9 @@ export default function SignIn({ onSwitchToSignUp }) {
     event.preventDefault();
     try {
       console.log(signInData)
-      const response = await axios.post('https://loanappbackend-dcsb.onrender.com/api/auth', signInData);
+      const response = await axios.post('https://loanappbackend-dcsb.onrender.com/api/signin', signInData);
       console.log('Sign in successful:', response.data);
-      localStorage.setItem("token", response.data);
+      localStorage.setItem("token", response.data.data);
       console.log("set man")
 	    window.location = "/";
     } catch (error) {

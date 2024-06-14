@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import CenterRegistration from "./CenterRegistration";
 import MemberRegistration from "./MemberRegistration";
+import LoanRegistration  from "./LoanRegistration.jsx";
 
 export default function Component() {
   const [activeComponent, setActiveComponent] = useState("center");
@@ -12,7 +13,7 @@ export default function Component() {
 		window.location.reload();
     console.log("Logout button clicked!"); 
   }
-  
+
   return (
     <div className="flex min-h-screen w-full">
       <Toaster />
@@ -24,49 +25,59 @@ export default function Component() {
               <span className="sr-only">Acme Loans</span>
             </button>
             <nav className="flex flex-col items-start gap-2 text-sm font-medium">
-              <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
-                <HomeIcon className="h-4 w-4" />
+              <button
+                  className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
+                <HomeIcon className="h-4 w-4"/>
                 Dashboard
               </button>
               <button
-                className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
-                  activeComponent === "center"
-                    ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
-                    : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
-                }`}
-                onClick={() => setActiveComponent("center")}
+                  className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
+                      activeComponent === "center"
+                          ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
+                          : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
+                  }`}
+                  onClick={() => setActiveComponent("center")}
               >
-                <FileTextIcon className="h-4 w-4" />
+                <FileTextIcon className="h-4 w-4"/>
                 Center Registration
               </button>
               <button
-                className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
-                  activeComponent === "member"
-                    ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
-                    : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
-                }`}
-                onClick={() => setActiveComponent("member")}
+                  className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
+                      activeComponent === "member"
+                          ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
+                          : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
+                  }`}
+                  onClick={() => setActiveComponent("member")}
               >
-                <MemberRegistrationIcon className="h-4 w-4" />
+                <MemberRegistrationIcon className="h-4 w-4"/>
                 Member Registration
               </button>
-              <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
-                <UsersIcon className="h-4 w-4" />
+              <button
+                  className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
+                      activeComponent === "loan"
+                          ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
+                          : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
+                  }`}
+                  onClick={() => setActiveComponent("loan")}
+              >
+                <UsersIcon className="h-4 w-4"/>
                 Loan Registration
               </button>
-              <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
-                <BarChartIcon className="h-4 w-4" />
+              <button
+                  className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
+                <BarChartIcon className="h-4 w-4"/>
                 Payment Registration
               </button>
             </nav>
           </div>
           <div className="flex flex-col items-start gap-2">
-            <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
-              <SettingsIcon className="h-4 w-4" />
+            <button
+                className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
+              <SettingsIcon className="h-4 w-4"/>
               Settings
             </button>
             <button
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
+                className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
               onClick={handleLogout}
             >
               <LogOutIcon className="h-4 w-4" />
@@ -90,38 +101,47 @@ export default function Component() {
             </SheetTrigger>
             <SheetContent side="top" className="bg-gray-100 dark:bg-gray-800">
               <nav className="grid gap-2 px-4 py-6 text-sm font-medium">
-                <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
-                  <HomeIcon className="h-4 w-4" />
+                <button
+                    className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
+                  <HomeIcon className="h-4 w-4"/>
                   Dashboard
                 </button>
                 <button
-                  className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
-                    activeComponent === "center"
-                      ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
-                      : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
-                  }`}
-                  onClick={() => setActiveComponent("center")}
+                    className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
+                        activeComponent === "center"
+                            ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
+                            : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
+                    }`}
+                    onClick={() => setActiveComponent("center")}
                 >
-                  <FileTextIcon className="h-4 w-4" />
+                  <FileTextIcon className="h-4 w-4"/>
                   Center Registration
                 </button>
                 <button
-                  className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
-                    activeComponent === "member"
-                      ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
-                      : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
-                  }`}
-                  onClick={() => setActiveComponent("member")}
+                    className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
+                        activeComponent === "member"
+                            ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
+                            : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
+                    }`}
+                    onClick={() => setActiveComponent("member")}
                 >
-                  <MemberRegistrationIcon className="h-4 w-4" />
+                  <MemberRegistrationIcon className="h-4 w-4"/>
                   Member Registration
                 </button>
-                <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
-                  <UsersIcon className="h-4 w-4" />
+                <button
+                    className={`flex items-center gap-2 rounded-md px-3 py-2 transition-colors ${
+                        activeComponent === "loan"
+                            ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50"
+                            : "text-gray-500 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50"
+                    }`}
+                    onClick={() => setActiveComponent("loan")}
+                >
+                  <UsersIcon className="h-4 w-4"/>
                   Loan Registration
                 </button>
-                <button className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
-                  <BarChartIcon className="h-4 w-4" />
+                <button
+                    className="flex items-center gap-2 rounded-md px-3 py-2 text-gray-500 transition-colors hover:bg-gray-200 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-50">
+                  <BarChartIcon className="h-4 w-4"/>
                   Payment Registration
                 </button>
               </nav>
@@ -129,18 +149,20 @@ export default function Component() {
           </Sheet>
         </div>
         <main className="px-4 py-8 md:px-8 md:py-12">
-          {activeComponent === "center" && <CenterRegistration />}
-          {activeComponent === "member" && <MemberRegistration />}
+          {activeComponent === "center" && <CenterRegistration/>}
+          {activeComponent === "member" && <MemberRegistration/>}
+          {activeComponent === "loan" && <LoanRegistration/>}
         </main>
       </div>
     </div>
   );
 }
+
 function BarChartIcon(props) {
   return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
+      <svg
+          {...props}
+          xmlns="http://www.w3.org/2000/svg"
       width="24"
       height="24"
       viewBox="0 0 24 24"

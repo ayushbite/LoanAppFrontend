@@ -37,7 +37,7 @@ export default function SignUp({ onSwitchToSignIn }) {
      
       const dataWithPin = { ...signupData, pin };
       const response = await axios.post(
-        "https://loanappbackend-dcsb.onrender.com/api/users",
+        "https://loanappbackend-dcsb.onrender.com/api/signup",
         dataWithPin // Send data with pin included
       );
       console.log("Sign up successful:", response.data);
